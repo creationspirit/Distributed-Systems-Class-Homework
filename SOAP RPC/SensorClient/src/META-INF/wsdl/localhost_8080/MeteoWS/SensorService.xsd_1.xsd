@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://sw.dz1.rassus.fer/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://sw.dz1.rassus.fer/">
+
+<xs:element name="register" type="tns:register"/>
+
+<xs:element name="registerResponse" type="tns:registerResponse"/>
+
+<xs:element name="searchNeighbour" type="tns:searchNeighbour"/>
+
+<xs:element name="searchNeighbourResponse" type="tns:searchNeighbourResponse"/>
+
+<xs:element name="storeMeasurement" type="tns:storeMeasurement"/>
+
+<xs:element name="storeMeasurementResponse" type="tns:storeMeasurementResponse"/>
+
+<xs:complexType name="register">
+<xs:sequence>
+<xs:element name="username" type="xs:string" minOccurs="0"/>
+<xs:element name="latitude" type="xs:double"/>
+<xs:element name="longitude" type="xs:double"/>
+<xs:element name="IPaddress" type="xs:string" minOccurs="0"/>
+<xs:element name="port" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="registerResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="storeMeasurement">
+<xs:sequence>
+<xs:element name="username" type="xs:string" minOccurs="0"/>
+<xs:element name="parameter" type="xs:string" minOccurs="0"/>
+<xs:element name="averageValue" type="xs:float"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="storeMeasurementResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="searchNeighbour">
+<xs:sequence>
+<xs:element name="username" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="searchNeighbourResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:userAddress" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="userAddress">
+<xs:sequence>
+<xs:element name="IPaddress" type="xs:string" minOccurs="0"/>
+<xs:element name="port" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
